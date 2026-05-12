@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+ 
+      body{
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        form{
+            width: 500px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        fieldset{
+            margin-bottom: 20px;
+            border: 1px solid gray;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        legend{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        label{
+            display: block;
+            margin-top: 10px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        input, select{
+            width: 100%;
+            height: 35px;
+            margin-top: 5px;
+        }
+
+        .radio-group input{
+            width: auto;
+        }
+
+        button{
+            width: 100%;
+            height: 40px;
+            background: rgb(0, 0, 0);
+            color: white;
+            border: 20px;;
+            font-size: 16px;
+        }
+
+        legend{
+            color: blueviolet;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        nav{
+            direction: rtl;
+        }
+
+        button{
+            width: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<form>
+<div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+    
+    <img src="c:\Users\Student\Desktop\channels4_profile.jpg" style="width: 200px;" alt="Logo">
+    
+    <h1 style="margin: 0; font-family: 'Times New Roman', Times, serif ;">SILVER OAK UNIVERSITY</h1>
+    
+</div>
+
+
+
+    <h2>Student Registration Form</h2>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Sign up</a>
+        <a href="#">Sign in</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+
+    </nav><br><br>    
+
+    <fieldset>
+
+        <legend>Personal Details *</legend>
+
+        <label>First Name :</label>
+        <input type="text" placeholder="Enter your first name" required><br><br>
+
+        <label>Last Name :</label>
+        <input type="text" placeholder="Enter your last name" required><br><br>
+
+        <label>Email :</label>
+        <input type="email" placeholder="Enter your email" required><br><br>
+
+        <label>Enrollment no :</label>
+        <input type="number" maxlength="12" placeholder="Enter your enrollment no" required><br><br>
+
+        <label>Phone Number :</label>
+        <input type="number" placeholder="Enter your number" required><br><br>
+
+        <label>Password : </label>
+        <input type="password" placeholder="Enter your password" required><br><br>
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>Department *</legend>
+
+        <select>
+            <option>Select Department</option>
+            <option>CSE</option>
+            <option>IT</option>
+            <option>AI/ML</option>
+            <option>CE</option>
+        </select><br><br>
+        
+    </fieldset>
+
+    <fieldset>
+
+        <legend>Year *</legend>
+
+        <select>
+            <option>Select Year</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+        </select>
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>City *</legend>
+
+        <select>
+            <option>select city</option>
+            <option>Ahemdabad</option>
+            <option>Rajkot</option>
+            <option>Botad</option>
+            <option>Gandhinagar</option>
+        </select>  
+    </fieldset><br><br>
+
+    <fieldset>
+
+        <label>Division :</label>
+        <input type="text" maxlength="1" placeholder="Enter your Division">
+
+    </fieldset><br><br>    
+
+
+    <button type="submit" style="font-family: 'Times New Roman', Times, serif;font-size: large;">Submit</button><br><br>
+     <button type="Clear" style="font-family: 'Times New Roman', Times, serif;font-size: large;">Clear</button>
+</form>
+
+</body>
+</html>
