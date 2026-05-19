@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            width: 450px;
+            height: 450px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #4facfe;
+            color: white;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn2 {
+            width: 100px;
+            padding: 10px;
+            border: none;
+            background: #4facfe;
+            color: white;
+            margin-right: 300px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #008cdd;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+
+    <div class="login-box">
+
+         <nav>
+            
+        <button class="btn2 btn-outline-primary m-3">
+            <a href="C:\Users\DELL\OneDrive\Desktop\OJT TRAINING\HTML\Cars\cars.html"
+                style="color: white; text-decoration: none;">Home</a>
+        </button><br><br>
+    </nav>
+
+        <h2>Login Form</h2>
+
+        <div class="input-box">
+            <label><b> Username :</b></label><br>
+            <input type="text" id="username" placeholder="Enter Username" required>
+        </div>
+
+        <div class="input-box">
+            <label><b> Password :</b></label><br>
+            <input type="password" id="password" placeholder="Enter Password" required>
+        </div>
+
+        <div class="input-box">
+            <label><b> Email :</b></label><br>
+            <input type="email" id="email" placeholder="Enter Email" required>
+        </div>
+        <button class="btn" onclick="login()">Login</button>
+
+        <p class="message" id="msg"></p>
+    </div>
+
+    <script>
+        function login() {
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let msg = document.getElementById("msg");
+
+            if (username === "" || password === "") {
+                msg.style.color = "red";
+                msg.innerHTML = "Please fill all fields!";
+            }
+            else {
+                msg.style.color = "green";
+                msg.innerHTML = "Login Successful!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

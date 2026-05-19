@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        .resume{
+            width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px lightgray;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+
+        .info{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input{
+            display: none;
+        }
+
+        label{
+            display: block;
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        label:hover{
+            background: #1d4ed8;
+        }
+
+        .content{
+            display: none;
+            background: #f9fafb;
+            padding: 15px;
+            margin-top: 5px;
+            border-left: 5px solid #2563eb;
+            border-radius: 5px;
+        }
+
+        input:checked + label + .content{
+            display: block;
+        }
+
+        ul{
+            padding-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="resume">
+
+        <h1>RUCHIT CHAUHAN</h1>
+
+        <div class="info">
+            <p>📞 +918849918989</p>
+            <p>📧 cruchit2006@gmail.com</p>
+            <p>📍 juna vadaj,Ahmedabad, Gujarat</p>
+        </div>
+        
+
+        <input type="checkbox" id="profile">
+
+        <label for="profile">Profile</label>
+
+        <div class="content">
+            <p>
+                Passionate web developer with knowledge of HTML, CSS and JavaScript.
+                Interested in creating responsive and user-friendly websites.
+            </p>
+        </div>
+
+
+        <input type="checkbox" id="education">
+
+        <label for="education">Education</label>
+
+        <div class="content">
+            <p><b>10th complete in :</b></p>
+            <p>Sandipani school</p>
+            <p><b>12th complete in :</b></p>
+            <p>Adarsh school</p>
+            <p><b>B.Tech in Computer Science Engineering</b></p>
+            <p>Silver Oak College of Engineering</p>
+            <p>2024 - 2028</p>
+        </div>
+
+
+        <input type="checkbox" id="skills">
+
+        <label for="skills">Skills</label>
+
+        <div class="content">
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+            </ul>
+        </div>
+
+        <input type="checkbox" id="experience">
+
+        <label for="experience">Experience</label>
+
+        <div class="content">
+            <p><b>Frontend Intern</b></p>
+            <p>Silver Oak Technologies</p>
+            <p>Worked on responsive websites using HTML and CSS.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

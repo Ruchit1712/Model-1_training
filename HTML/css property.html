@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <title>css property</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .box1 {
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+            text-align: center;
+            position: fixed;
+        }
+
+        .box2 {
+            height: 200px;
+            width: 200px;
+            background-color: black;
+            float: inline-end;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image {
+            border-radius: 10px;
+            margin-left: 400px;
+            display: inline-block;
+            justify-content: center;
+            background-color: red;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image:hover {
+            transform: scale(1.2);
+        }
+
+
+
+        .video {
+            position: relative;
+            margin-top: 20px;
+            margin-left: 400px;
+            display: inline-block;
+            justify-content: center;
+        }
+
+        @media(max-width: 600px) {
+            .box1 {
+                background-color: red;
+            }
+
+            .box2 {
+                background-color: blue;
+            }
+        }
+
+        @layer {
+            body {
+                background: pink;
+            }
+        }
+
+        @layer {
+            body {
+                background: lightblue;
+            }
+        }
+
+        .parallax {
+            background-image: url("Cars/Volkswagen Virtus.jpg");
+            min-height: 500px;
+
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            margin-top: 30px;
+        }
+
+        #home {
+  width: 46px;
+  height: 44px;
+  background-image: url(Cars/image1.jpg);
+  background-position: 0 0;
+}
+
+#prev {
+  width: 43px;
+  height: 44px;  
+  background-image: url(Cars/image2.jpg);
+  background-position: -47px 0;  
+}
+
+#next {
+  width: 43px;
+  height: 44px;  
+  background-image: url(Cars/image3.jpg);
+  background-position: -91px 0;  
+}
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+    </div>
+
+    <div class="box2"></div>
+
+    <div class="image">
+        <img src="Cars/Volkswagen Virtus.jpg" height="200px" width="300px">
+    </div>
+
+    <div class="parallax"></div>
+    <div class="video">
+        <video autoplay muted controls loop width="300">
+            <source src="VivaCut_video_1778602587777_1080HD (3).mp4" type="video/mp4">
+    </div>
+
+
+    <h2>Image Sprites</h2>
+
+<img id="home" src="img_trans.gif" width="1" height="1">
+<img id="prev" src="img_trans.gif" width="1" height="1">
+<img id="next" src="img_trans.gif" width="1" height="1">
+
+    <i class="fa-solid fa-star"></i>
+
+</body>
+
+</html>

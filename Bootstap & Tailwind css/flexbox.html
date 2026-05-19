@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+
+    <div class="flex flex-row bg-sky-600 p-5">
+
+        <div class="basis-128 text-xl">
+            <h1>My Flex Layout</h1>
+        </div>
+    </div>
+
+
+    <div class="flex">
+
+        <div class="h-150  w-80 flex flex-col bg-black text-white">
+
+            <a href="#">Home</a><br>
+            <a href="#">Login</a><br>
+            <a href="#">About Us</a><br>
+            <a href="#">Contact Us</a>
+
+        </div>
+
+        <div class="flex flex-col items-center">
+
+            <div class="bg-gray-200 text-black p-3 h-50 w-150 mb-10 mt-10 ml-50 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-400"
+                style="border-radius: 10px; text-align: center;">
+
+                <h2 class="text-xl font-bold mb-4">
+                    Main Content
+                </h2>
+
+                <p>Welcome to this page</p>
+                <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-pink-600 rounded-full animate-spin"></div>
+
+            </div>
+
+            <div class="bg-gray-200 text-black p-3 h-65 w-150 mb-10 ml-50 "
+                style="border-radius: 10px; text-align: center;">
+
+                <input type="text" id="search" placeholder="Search table..."
+                    class="mb-4 p-2 border border-gray-300 rounded w-full max-w-xs block text-sm" />
+
+                <table class="w-full max-w-xl border border-gray-200 text-sm text-left">
+                    <thead class="bg-gray-100 text-gray-700">
+                        <tr>
+                            <th class="p-3">Name</th>
+                            <th class="p-3">Role</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200" id="tableBody">
+                        <tr class="item-row">
+                            <td class="p-3 font-medium">Lindsay Walton</td>
+                            <td class="p-3">Developer</td>
+                        </tr>
+                        <tr class="item-row">
+                            <td class="p-3 font-medium">Courtney Henry</td>
+                            <td class="p-3">Designer</td>
+                        </tr>
+                        <tr class="item-row">
+                            <td class="p-3 font-medium">Tom Cook</td>
+                            <td class="p-3">Director</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="flex flex-row bg-sky-600 p-4">
+
+        <div class="basis-64 text-xl">
+            <footer>This is footer content</footer>
+        </div>
+    </div>
+</body>
+
+</html>
