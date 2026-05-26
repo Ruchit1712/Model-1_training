@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interoduction of JS</title>
+</head>
+
+<body>
+
+    <h2>Java Script variable & alert</h2>
+    <p id="demo"></p>
+    <button id="Confirm">Click Me</button><br><br>
+    <button id="alert">CLick Me</button><br><br>
+    <button id="Prompt">Click Me</button>
+
+
+    <script>
+
+        document.getElementById("Confirm").addEventListener("click", function () {
+            var result = confirm("Are you Sure?");
+            if (result) {
+                alert("OK");
+            }
+            else {
+                alert("CANCEL")
+            }
+        });
+
+        document.getElementById("alert").addEventListener("click", function () {
+            alert("Welcome to this page");
+        });
+
+        document.getElementById("Prompt").addEventListener("click", function () {
+            var result = prompt("Enter your name");
+            if (result == null) {
+                alert("HEllo" + result + "!");
+            }
+
+        });
+
+
+
+        var x = 5;
+        var y = 7
+        var z = x + y;
+
+        document.getElementById("demo").innerHTML =
+            "Value of x is " + x + "<br>" +
+            "Value of y is " + y + "<br>" +
+            "Value of z is " + z;
+    </script>
+
+</body>
+
+</html>

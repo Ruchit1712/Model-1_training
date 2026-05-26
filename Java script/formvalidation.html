@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration Form</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Latest tech news, tutorials, and reviews on gadgets and software.">
+    <meta name="keywords" content="tech, gadgets, software, reviews, tutorials">
+    <meta name="author" content="Pushkar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 500px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            border: 1px solid gray;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            color: blueviolet;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 35px;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            background: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form name="Myform" onsubmit="return formValidation()">
+
+        <h2 align="center">Student Registration Form</h2>
+
+        <fieldset>
+
+            <legend>Personal Details *</legend>
+
+            <label>First Name :</label>
+            <input type="text" name="firstname" placeholder="Enter your first name">
+
+            <label>Last Name :</label>
+            <input type="text" name="lastname" placeholder="Enter your last name">
+
+            <label>Email :</label>
+            <input type="email" name="email" placeholder="Enter your email">
+
+            <label>Password :</label>
+            <input type="password" name="password" placeholder="Enter your password">
+
+            <label>Phone Number :</label>
+            <input type="number" name="phone" placeholder="Enter your number">
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Department *</legend>
+
+            <select name="department">
+                <option>Select Department</option>
+                <option>CSE</option>
+                <option>IT</option>
+                <option>AI/ML</option>
+                <option>CE</option>
+            </select>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Year *</legend>
+
+            <select name="year">
+                <option>Select Year</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>City *</legend>
+
+            <select name="city">
+                <option>Select City</option>
+                <option>Ahmedabad</option>
+                <option>Rajkot</option>
+                <option>Botad</option>
+                <option>Gandhinagar</option>
+            </select>
+
+        </fieldset>
+
+        <button type="submit" style="font-family: 'Times New Roman', Times, serif;">
+            Submit
+        </button>
+
+    </form>
+
+    <script>
+
+        function formValidation() {
+
+            var firstname = document.forms["Myform"]["firstname"].value;
+            var lastname = document.forms["Myform"]["lastname"].value;
+            var email = document.forms["Myform"]["email"].value;
+            var password = document.forms["Myform"]["password"].value;
+            var phone = document.forms["Myform"]["phone"].value;
+
+            if (firstname == "") {
+                alert("Please enter first name");
+                return false;
+            }
+
+            if (lastname == "") {
+                alert("Please enter last name");
+                return false;
+            }
+
+            if (email == "") {
+                alert("Email is required");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            if (phone == "") {
+                alert("Phone number is required");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>

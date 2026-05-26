@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delete Row with jQuery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            padding: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        th,
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ccd3e0;
+        }
+
+        thead th {
+            background: #e9eef7;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f8fbff;
+        }
+
+        .delete-button {
+            padding: 6px 10px;
+            background: #e74c3c;
+            color:
+                white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Delete Table Row with jQuery</h1>
+    <p>Click the delete button to remove a row from the table.</p>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ruchit</td>
+                <td>Ruchit2006@gmail.com</td>
+                <td>Question</td>
+                <td>Sales</td>
+                <td><button class="delete-button">Delete</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mihir</td>
+                <td>Mihir2006gmail.com</td>
+                <td>Support</td>
+                <td>Customer Service</td>
+                <td><button class="delete-button">Delete</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>jay</td>
+                <td>jay2006@gmail.com</td>
+                <td>Feedback</td>
+                <td>Marketing</td>
+                <td><button class="delete-button">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').on('click', '.delete-button', function () {
+                $(this).closest('tr').fadeOut(200, function () {
+                    $(this).remove();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

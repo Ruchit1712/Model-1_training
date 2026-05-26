@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zebra Strip Table — Beginner</title>
+  <style>
+    /* Simple, readable styles for beginners */
+    body { font-family: Arial, sans-serif; padding:20px; }
+    table { width:100%; border-collapse:collapse; margin-top:12px; }
+    th, td { padding:8px 10px; border:1px solid #ddd; }
+    thead th { background:#eee; }
+    /* We'll apply zebra colors via jQuery so no tbody styles here */
+    tr:hover { background:#e6f7ff; }
+  </style>
+</head>
+<body>
+  <h2>Zebra Strip Table — Beginner</h2>
+  <p>This example uses a short jQuery script to color every other row.</p>
+
+  <table id="carTable">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Toyota</td><td>Corolla</td><td>2020</td></tr>
+      <tr><td>2</td><td>Honda</td><td>Civic</td><td>2019</td></tr>
+      <tr><td>3</td><td>Ford</td><td>Focus</td><td>2021</td></tr>
+      <tr><td>4</td><td>Nissan</td><td>Sentra</td><td>2018</td></tr>
+    </tbody>
+  </table>
+
+  <!-- jQuery CDN (one line) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    /* Beginner-friendly approach:
+       - Loop over each table row
+       - Use the row index to decide whether to color it
+       - index % 2 === 0 colors rows 0,2,4... (zero-based)
+    */
+    $(document).ready(function(){
+      $('#carTable tbody tr').each(function(index){
+        if (index % 2 === 1) {
+          // color every second row (1,3,5...)
+          $(this).css('background-color', '#f9f9f9');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jQuery Zebra Strip Table</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: white;
+            color: #222;
+        }
+
+        .wrap {
+            max-width: 1000px;
+            margin: 36px auto;
+            padding: 0 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 10px black;
+            border-radius: 10px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+        }
+
+        th,
+        td {
+            padding: 10px 12px;
+            border: 1px solid #0d0d0d;
+            text-align: left;
+        }
+
+        thead th {
+            background: white;
+            font-weight: 700;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: lightgray;
+        }
+
+
+        tbody tr:hover {
+            background: #e8f6ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>jQuery Zebra Strip Table</h1>
+        <p>Simple example that applies zebra striping to table rows using jQuery.</p>
+
+        <table id="carTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Mobile Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ruchit</td>
+                    <td>ruchit2006@gmail.com</td>
+                    <td>Question</td>
+                    <td>4738291746</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mihir</td>
+                    <td>mihir2006@gmail.com</td>
+                    <td>Support</td>
+                    <td>4637193627</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Prins</td>
+                    <td>prins2006@gmail.com</td>
+                    <td>Feedback</td>
+                    <td>9987564239</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Shubham</td>
+                    <td>shubham29006@gmail.com
+                    <td>Order</td>
+                    <td>7483927489</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Hardik</td>
+                    <td>hardik2006@gmail.com</td>
+                    <td>Billing</td>
+                    <td>4893746289</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Dev</td>
+                    <td>dev2006@gmail.com</td>
+                    <td>Inquiry</td>
+                    <td>8948392847</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(function () {
+            $('#carTable tbody tr').each(function (rowIndex) {
+
+                $(this).removeClass('odd even').addClass((rowIndex % 2 === 0) ? 'even' : 'odd');
+
+                $(this).find('td').each(function (colIndex) {
+                    $(this).removeClass('col-alt col-alt-2');
+                    if (colIndex % 2 === 0) {
+                        $(this).addClass('col-alt');
+                    } else {
+                        $(this).addClass('col-alt-2');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
