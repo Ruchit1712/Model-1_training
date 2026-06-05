@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Checkout</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .checkout-card {
+            background: white;
+            color: black;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.3);
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .car-summary {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .btn-buy {
+            background: #198754;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            transition: 0.3s;
+        }
+
+        .payment-box {
+            background: #e8f5e9;
+            border: 2px dashed #198754;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .payment-methods .form-check-label {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .payment-methods .form-check-input:checked + .form-check-label {
+            color: #0f172a;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: #198754;
+            color: white;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            font-weight: bold;
+            animation: pop .5s ease;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
+
+            80% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="hero-title">🚗 Buy Your Dream Car</h1>
+        <p class="lead">Secure Payment • Fast Processing • Trusted Service</p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="checkout-card">
+
+                <img id="carImage" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800"
+                    class="img-fluid rounded mb-3">
+
+                <h3 id="carTitle">Mercedes AMG GT</h3>
+
+                <p id="carDescription" class="text-muted">
+                    Luxury sports coupe with premium performance and comfort.
+                </p>
+
+                <div class="car-summary">
+
+                    <h5>Order Summary</h5>
+
+                    <hr>
+
+                    <p id="carPrice">Car Price: ₹1,20,00,000</p>
+                    <p id="carRegistration">Registration: ₹5,000</p>
+                    <p id="carInsurance">Insurance: As per market</p>
+
+                    <hr>
+
+                    <h4 id="orderTotal" class="text-success">
+                        Total: ₹1,20,05,000 + Insurance (market rate)
+                    </h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-8">
+
+            <div class="checkout-card">
+
+                <h2 class="mb-4">Customer Information</h2>
+
+                <form id="checkoutForm">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" required>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Delivery Address</label>
+                        <textarea class="form-control" rows="3" required></textarea>
+                    </div>
+
+                    <div class="mb-3 payment-methods">
+                        <label class="form-label d-block">Payment Method</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="upiOption" value="upi" checked>
+                            <label class="form-check-label" for="upiOption">UPI</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="codOption" value="cod">
+                            <label class="form-check-label" for="codOption">Cash on Delivery</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3" id="upiField">
+                        <label class="form-label">UPI ID</label>
+                        <input type="text" class="form-control" placeholder="example@paytm" required>
+                    </div>
+
+                    <div class="payment-box mb-4" id="paymentInfo">
+                        <h5>💳 Payment Method</h5>
+                        <p class="mb-0">
+                            Pay securely using any UPI app such as Google Pay,
+                            PhonePe, Paytm or BHIM.
+                        </p>
+                    </div>
+
+                    <button type="submit"
+                        class="btn btn-success btn-buy w-100">
+                        Buy Now
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="orderSuccessModal" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 shadow-lg">
+
+            <div class="modal-body text-center p-5">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2 class="text-success fw-bold mt-4">
+                    Order Placed Successfully!
+                </h2>
+
+                <p class="text-muted mt-3">
+                    Thank you for purchasing your dream car.
+                    Our team will contact you shortly.
+                </p>
+
+                <button class="btn btn-success px-4"
+                    data-bs-dismiss="modal">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const checkoutForm = document.getElementById("checkoutForm");
+const upiOption = document.getElementById("upiOption");
+const codOption = document.getElementById("codOption");
+const upiField = document.getElementById("upiField");
+const paymentInfo = document.getElementById("paymentInfo");
+const carImage = document.getElementById("carImage");
+const carTitle = document.getElementById("carTitle");
+const carDescription = document.getElementById("carDescription");
+const carPrice = document.getElementById("carPrice");
+const carRegistration = document.getElementById("carRegistration");
+const carInsurance = document.getElementById("carInsurance");
+const orderTotal = document.getElementById("orderTotal");
+
+function formatRupees(value) {
+    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+}
+
+function updateCarDetails() {
+    const params = new URLSearchParams(window.location.search);
+    const selectedCar = params.get('car') || 'Mercedes AMG GT';
+    const imageUrl = params.get('img') || 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800';
+    const price = Number(params.get('price')) || 7097500;
+    const registration = Number(params.get('registration')) || 5000;
+    const insuranceParam = params.get('insurance');
+    const insuranceValue = insuranceParam ? Number(insuranceParam) : NaN;
+    const desc = params.get('desc') || 'Luxury sports coupe with premium performance and comfort.';
+
+    carTitle.textContent = selectedCar;
+    carImage.src = imageUrl;
+    carDescription.textContent = desc;
+    carPrice.textContent = `Car Price: ${formatRupees(price)}`;
+    carRegistration.textContent = `Registration: ${formatRupees(registration)}`;
+    carInsurance.textContent = !Number.isNaN(insuranceValue)
+        ? `Insurance: ${formatRupees(insuranceValue)}`
+        : 'Insurance: As per market';
+    orderTotal.textContent = !Number.isNaN(insuranceValue)
+        ? `Total: ${formatRupees(price + registration + insuranceValue)}`
+        : `Total: ${formatRupees(price + registration)} + Insurance (market rate)`;
+}
+
+function updatePaymentInfo() {
+    if (codOption.checked) {
+        upiField.style.display = "none";
+        upiField.querySelector("input").required = false;
+        paymentInfo.innerHTML = `
+            <h5>🚚 Cash on Delivery</h5>
+            <p class="mb-0">
+                Pay when your car is delivered at your preferred location.
+                No online payment required.
+            </p>
+        `;
+    } else {
+        upiField.style.display = "block";
+        upiField.querySelector("input").required = true;
+        paymentInfo.innerHTML = `
+            <h5>💳 Payment Method</h5>
+            <p class="mb-0">
+                Pay securely using any UPI app such as Google Pay,
+                PhonePe, Paytm or BHIM.
+            </p>
+        `;
+    }
+}
+
+upiOption.addEventListener("change", updatePaymentInfo);
+codOption.addEventListener("change", updatePaymentInfo);
+
+updateCarDetails();
+updatePaymentInfo();
+
+checkoutForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const successModal = new bootstrap.Modal(
+        document.getElementById("orderSuccessModal")
+    );
+
+    successModal.show();
+
+    checkoutForm.reset();
+    updatePaymentInfo();
+});
+
+</script>
+
+</body>
+
+</html>

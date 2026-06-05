@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Cars</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: linear-gradient(135deg, #050816, #0f172a, #1e293b);
+        font-family: Arial, sans-serif;
+        color: #e2e8f0;
+      }
+
+      .navbar {
+        background: linear-gradient(
+          90deg,
+          rgba(5, 10, 25, 0.95),
+          rgba(15, 23, 42, 0.95)
+        );
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 245, 255, 0.12);
+      }
+
+      .navbar a {
+        color: #e5e7eb !important;
+        transition: 0.3s;
+      }
+
+      .navbar a:hover {
+        color: #00e5ff !important;
+      }
+
+      .title {
+        text-align: center;
+        margin: 40px 0;
+        font-weight: bold;
+        color: #00f5ff;
+        text-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
+      }
+
+      .card {
+        border: 1px solid rgba(0, 245, 255, 0.2);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: 0.3s;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 25px rgba(0, 245, 255, 0.3);
+      }
+
+      .card img {
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .price {
+        color: #c7d2fe;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .rating {
+        color: #facc15;
+        font-weight: bold;
+      }
+
+      .card-body h4,
+      .card-body p,
+      .card-body b {
+        color: #e2e8f0;
+      }
+
+      .card-body p {
+        opacity: 0.95;
+      }
+
+      .btn-buy {
+        background: linear-gradient(90deg, #00f5ff, #3b82f6, #a855f7);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn-buy:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #00f5ff;
+      }
+      select {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid #00e5ff;
+}
+
+option {
+    color: black;
+}
+
+    .custom-footer {
+        background: rgba(4, 14, 28, 0.95);
+        color: #e6fff9;
+    }
+
+    .custom-footer p {
+        margin: 0;
+        color: #e6fff9;
+    }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top animate-down">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">My Car Store</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="Login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#Category">Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#Review">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#AboutUs">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#Feedback">Feedback</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#Contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <h1 class="title">Luxury Cars</h1>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym13JTIwbTR8ZW58MHx8MHx8fDA%3D"
+              class="card-img-top"
+              alt="BMW"
+            />
+            <div class="card-body">
+              <h4>BMW M4</h4>
+              <p class="price">₹7,097,500</p>
+              <p class="rating">⭐ 4.8/5</p>
+              <p>
+                <b>Features:</b> Twin Turbo Engine, Sport Mode, Premium Interior
+              </p>
+              <a
+                href="buy now.html?car=BMW%20M4&price=7097500&img=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1617531653332-bd46c24f2068%3Ffm%3Djpg%26q%3D60%26w%3D3000%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.1.0%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym13JTIwbTR8ZW58MHx8MHx8fDA%253D&desc=Luxury%20sports%20coupe%20with%20premium%20performance%20and%20comfort.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://wallpaperswide.com/download/audi_r8___project_cars_2-wallpaper-1600x900.jpg"
+              class="card-img-top"
+              alt="Audi"
+            />
+            <div class="card-body">
+              <h4>Audi R8</h4>
+              <p class="price">₹10,020,000</p>
+              <p class="rating">⭐ 4.9/5</p>
+              <p>
+                <b>Features:</b> V10 Engine, Virtual Cockpit, LED Headlights
+              </p>
+              <a
+                href="buy now.html?car=Audi%20R8&price=10020000&img=https%3A%2F%2Fwallpaperswide.com%2Fdownload%2Faudi_r8___project_cars_2-wallpaper-1600x900.jpg&desc=V10%20powerhouse%20with%20cutting-edge%20cockpit%20and%20race-ready%20handling.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://4kwallpapers.com/images/wallpapers/mercedes-benz-s-580-3840x2160-25485.jpg"
+              class="card-img-top"
+              alt="Mercedes"
+            />
+            <div class="card-body">
+              <h4>Mercedes-Benz S-Class</h4>
+              <p class="price">₹9,185,000</p>
+              <p class="rating">⭐ 4.9/5</p>
+              <p><b>Features:</b> Luxury Cabin, Ambient Lighting, AI Assist</p>
+              <a
+                href="buy now.html?car=Mercedes-Benz%20S-Class&price=9185000&img=https%3A%2F%2F4kwallpapers.com%2Fimages%2Fwallpapers%2Fmercedes-benz-s-580-3840x2160-25485.jpg&desc=Executive%20luxury%20sedan%20with%20ambient%20lighting%20and%20advanced%20tech.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c"
+              class="card-img-top"
+              alt="Lamborghini"
+            />
+            <div class="card-body">
+              <h4>Lamborghini Huracan</h4>
+              <p class="price">₹20,875,000</p>
+              <p class="rating">⭐ 5.0/5</p>
+              <p>
+                <b>Features:</b> Supercar Design, V10 Power, Carbon Fiber Body
+              </p>
+              <a
+                href="buy now.html?car=Lamborghini%20Huracan&price=20875000&img=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1511919884226-fd3cad34687c&desc=Supercar%20design%20with%20roar%20and%20race-ready%20V10%20power.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://wallpaperswide.com/download/porsche_911_carrera_s-wallpaper-1600x900.jpg"
+              class="card-img-top"
+              alt="Porsche"
+            />
+            <div class="card-body">
+              <h4>Porsche 911</h4>
+              <p class="price">₹11,690,000</p>
+              <p class="rating">⭐ 4.8/5</p>
+              <p>
+                <b>Features:</b> Fast Acceleration, Sport Exhaust, Luxury Seats
+              </p>
+              <a
+                href="buy now.html?car=Porsche%20911&price=11690000&img=https%3A%2F%2Fwallpaperswide.com%2Fdownload%2Fporsche_911_carrera_s-wallpaper-1600x900.jpg&desc=Iconic%20performance%20with%20precision%20handling%20and%20classic%20style.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmVycmFyaSUyMGY4fGVufDB8fDB8fHww"
+              class="card-img-top"
+              alt="Ferrari"
+            />
+            <div class="card-body">
+              <h4>Ferrari F8</h4>
+              <p class="price">₹23,380,000</p>
+              <p class="rating">⭐ 5.0/5</p>
+              <p>
+                <b>Features:</b> Turbo V8, Aerodynamic Design, Racing Interior
+              </p>
+              <a
+                href="buy now.html?car=Ferrari%20F8&price=23380000&img=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1614200179396-2bdb77ebf81b%3Ffm%3Djpg%26q%3D60%26w%3D3000%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.1.0%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmVycmFyaSUyMGY4fGVufDB8fDB8fHww&desc=Turbocharged%20supercar%20with%20aerodynamic%20performance%20and%20racing%20heritage.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://pixelz.cc/wp-content/uploads/2018/08/rolls-royce-phantom-uhd-4k-wallpaper.jpg"
+              class="card-img-top"
+              alt="Rolls Royce"
+            />
+            <div class="card-body">
+              <h4>Rolls Royce Phantom</h4>
+              <p class="price">₹38,410,000</p>
+              <p class="rating">⭐ 5.0/5</p>
+              <p>
+                <b>Features:</b> Ultra Luxury, Silent Cabin, Premium Leather
+              </p>
+              <a
+                href="buy now.html?car=Rolls%20Royce%20Phantom&price=38410000&img=https%3A%2F%2Fpixelz.cc%2Fwp-content%2Fuploads%2F2018%2F08%2Frolls-royce-phantom-uhd-4k-wallpaper.jpg&desc=Ultra%20luxury%20sedan%20with%20serene%20cabin%20and%20bespoke%20craftsmanship.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://www.hdcarwallpapers.com/walls/bentley_continental_gt_mulliner_4k_2-HD.jpg"
+              class="card-img-top"
+              alt="Bentley"
+            />
+            <div class="card-body">
+              <h4>Bentley Continental GT</h4>
+              <p class="price">₹20,040,000</p>
+              <p class="rating">⭐ 4.9/5</p>
+              <p><b>Features:</b> W12 Engine, Luxury Dashboard, AWD System</p>
+              <a
+                href="buy now.html?car=Bentley%20Continental%20GT&price=20040000&img=https%3A%2F%2Fwww.hdcarwallpapers.com%2Fwalls%2Fbentley_continental_gt_mulliner_4k_2-HD.jpg&desc=Grand%20tourer%20with%20powerful%20W12%20engine%20and%20premium%20comfort.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="https://assets.gqindia.com/photos/60c2f890ff979bbcb3a4f2b5/16:9/w_2560%2Cc_limit/top-image-03%2520(3).jpg"
+              class="card-img-top"
+              alt="Tesla"
+            />
+            <div class="card-body">
+              <h4>Tesla Model S Plaid</h4>
+              <p class="price">₹7,932,500</p>
+              <p class="rating">⭐ 4.8/5</p>
+              <p>
+                <b>Features:</b> Electric Power, Autopilot, Long Range Battery
+              </p>
+              <a
+                href="buy now.html?car=Tesla%20Model%20S%20Plaid&price=7932500&img=https%3A%2F%2Fassets.gqindia.com%2Fphotos%2F60c2f890ff979bbcb3a4f2b5%2F16%3A9%2Fw_2560%252Cc_limit%2Ftop-image-03%252520%283%29.jpg&desc=Electric%20performance%20sedan%20with%20insane%20acceleration%20and%20autopilot.&registration=50000&insurance=100000"
+                class="btn btn-buy w-100 d-inline-block text-center text-decoration-none"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🚗 CAR MATCH GAME -->
+    <div class="container mt-5 text-center">
+      <h2 class="text-white mb-4">🔥 Car Match Game</h2>
+
+      <select id="carA" class="form-control mb-2">
+        <option value="">Select Car A</option>
+        <option value="bmw">BMW M4</option>
+        <option value="bugatti">Bugatti Chiron</option>
+        <option value="audi">Audi R8</option>
+        <option value="mercedes">Mercedes S-Class</option>
+        <option value="rollsroyce">Rolls Royce Phantom</option>
+        <option value="lamborghini">Lamborghini Huracan</option>
+      </select>
+
+      <select id="carB" class="form-control mb-3">
+        <option value="">Select Car B</option>
+        <option value="bmw">BMW M4</option>
+        <option value="bugatti">Bugatti Chiron</option>
+        <option value="audi">Audi R8</option>
+        <option value="mercedes">Mercedes S-Class</option>
+        <option value="rollsroyce">Rolls Royce Phantom</option>
+        <option value="lamborghini">Lamborghini Huracan</option>
+      </select>
+      <button class="btn btn-primary" onclick="compareCars()">
+        ⚔ Compare Cars
+      </button>
+
+      <div id="result" class="mt-4 text-white"></div>
+    </div>
+
+    <script>
+
+    const cars = {
+    bmw: {
+        name: "BMW M4",
+        speed: 88,
+        price: 80,
+        mileage: 65,
+        comfort: 75
+    },
+    bugatti: {
+        name: "Bugatti Chiron",
+        speed: 100,
+        price: 95,
+        mileage: 40,
+        comfort: 70
+    },
+    audi: {
+        name: "Audi R8",
+        speed: 85,
+        price: 75,
+        mileage: 60,
+        comfort: 80
+    },
+    mercedes: {
+        name: "Mercedes S-Class",
+        speed: 78,
+        price: 85,
+        mileage: 70,
+        comfort: 95
+    },
+    rollsroyce: {
+        name: "Rolls Royce Phantom",
+        speed: 70,
+        price: 100,
+        mileage: 55,
+        comfort: 100
+    },
+    lamborghini: {
+        name: "Lamborghini Huracan",
+        speed: 95,
+        price: 90,
+        mileage: 45,
+        comfort: 72
+    }
+};
+      function compareCars() {
+
+          let a = document.getElementById("carA").value;
+          let b = document.getElementById("carB").value;
+
+          if (!a || !b) {
+              alert("Select both cars!");
+              return;
+          }
+
+          let car1 = cars[a];
+          let car2 = cars[b];
+
+          let score1 = 0;
+          let score2 = 0;
+
+          let explanation = "";
+
+          // SPEED
+          if (car1.speed > car2.speed) {
+              score1++;
+              explanation += "⚡ Speed: " + car1.name + " wins<br>";
+          } else {
+              score2++;
+              explanation += "⚡ Speed: " + car2.name + " wins<br>";
+          }
+
+          // PRICE (lower is better → reverse logic)
+          if (car1.price < car2.price) {
+              score1++;
+              explanation += "💰 Price: " + car1.name + " is cheaper<br>";
+          } else {
+              score2++;
+              explanation += "💰 Price: " + car2.name + " is cheaper<br>";
+          }
+
+          // MILEAGE
+          if (car1.mileage > car2.mileage) {
+              score1++;
+              explanation += "⛽ Mileage: " + car1.name + " wins<br>";
+          } else {
+              score2++;
+              explanation += "⛽ Mileage: " + car2.name + " wins<br>";
+          }
+
+          // COMFORT
+          if (car1.comfort > car2.comfort) {
+              score1++;
+              explanation += "😌 Comfort: " + car1.name + " wins<br>";
+          } else {
+              score2++;
+              explanation += "😌 Comfort: " + car2.name + " wins<br>";
+          }
+
+          let result = "";
+
+          if (score1 > score2) {
+              result = "🏆 Winner: " + car1.name;
+          } else if (score2 > score1) {
+              result = "🏆 Winner: " + car2.name;
+          } else {
+              result = "🤝 It's a Tie!";
+          }
+
+          document.getElementById("result").innerHTML = `
+              <div class="alert alert-info">
+                  <h3>${result}</h3>
+                  <hr>
+                  <p><b>Score:</b> ${car1.name} = ${score1} | ${car2.name} = ${score2}</p>
+                  <hr>
+                  <h5>📊 Why this result?</h5>
+                  <p>${explanation}</p>
+              </div>
+          `;
+      }
+    </script>
+
+    <footer class="custom-footer text-center p-3">
+      <p class="mb-0">
+        © 2026 My Car Store | Designed by Ruchit Chauhan
+      </p>
+    </footer>
+  </body>
+</html>
